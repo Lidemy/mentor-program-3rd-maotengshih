@@ -8,6 +8,8 @@
 7. `git add .`把他們都加入到staged 的階段。  
 8. `git commit -m 'week1_hw'` 用 terminal 將作業commit，並加上備註。   
 9. `git push -u origin 	week1` push 回原專案的 week1 branch
-10. 回到瀏覽器用 Github 提出一個 pull request。等待審核。   
-11. 如果審核通過，會由管理者 (胡立) 把這支 branch merge 回 master。
-12. `git branch -d week1`把剛才自己寫作業的那支branch砍掉，只留下更新後的 master
+10. 回到瀏覽器用 Github 提出一個 pull request，並把網址複製起來。
+11. 回到瀏覽器，找到程導三期的專用Repo https://github.com/Lidemy/homeworks-3rd
+12. 用 issue 功能，貼上剛才 pull request複製的網址，等待審核。   
+13. 如果審核通過，會由管理者 (胡立) 把這支 branch merge 回 master。
+14. `git branch -d week1`把剛才自己寫作業的那支branch砍掉，只留下更新後的 master
