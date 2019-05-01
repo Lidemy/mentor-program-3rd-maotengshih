@@ -12,4 +12,5 @@
 11. 回到瀏覽器，找到程導三期的專用Repo https://github.com/Lidemy/homeworks-3rd
 12. 用 issue 功能，貼上剛才 pull request複製的網址，等待審核。   
 13. 如果審核通過，會由管理者 (胡立) 把這支 branch merge 回 master。
-14. `git branch -d week1`把剛才自己寫作業的那支branch砍掉，只留下更新後的 master
+14. `git pull origin master` 將遠端 merge 完的 master 拉回 local
+15. `git branch -d week1`把剛才自己寫作業的那支branch砍掉，只留下更新後的 master
