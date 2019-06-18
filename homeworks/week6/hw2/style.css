@@ -25,16 +25,8 @@ body {
 	font-size: 20px;
 }
 
-.clap1 {
-	font-size: 40px;
-	border-radius: 60px;
-	top: 100px;
-	left: 30px;
-	position: fixed;
-}
-
 .clap {
 	left:80px;
 	top: 100px;
-	position: absolute;
+	position: fixed;
 }
