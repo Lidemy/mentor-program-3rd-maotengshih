@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<head>
+	<title>Wk7Hw3 簡易計算機</title>
+	<style>
+	body{
+		background-color: #EAEDED;
+		width: 1600px;
+		height: 2200px;
+	}
+	.calc {
+		padding: 20px;
+		width: 580px;
+		height: 700px;
+		background-color: #58D68D  
+	}
+	div {
+		margin: 10px;
+	}
+
+	.monitor {
+		padding: 5px;
+		font-size: 90px;
+		width: 560px;
+		height: 100px;
+		background-color: #ECF0F1 ;
+	}
+
+	button{
+		font-size: 70px;
+		width: 120px;
+		height: 120px;
+		margin: 10px;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="calc">
+		<div class="monitor"></div>
+		<button id="seven" class='numBtn' data-value='7'>7</button>
+		<button id="eight" class='numBtn' data-value='8'>8</button>
+		<button id="nine" class='numBtn' data-value='9'>9</button>
+		<button id="divide" class='opBtn' data-value='/'>/</button>
+		<button id="four" class='numBtn' data-value='4'>4</button>
+		<button id="five" class='numBtn' data-value='5'>5</button>
+		<button id="six" class='numBtn' data-value='6'>6</button>
+		<button id="mutiply" class='opBtn' data-value='*'>*</button>
+		<button id="one" class='numBtn' data-value='1'>1</button>
+		<button id="two" class='numBtn' data-value='2'>2</button>
+		<button id="three" class='numBtn' data-value='3'>3</button>
+		<button id="minus" class='opBtn' data-value='-'>-</button>
+		<button id="clear" data-value=''>AC</button>
+		<button id="zero" class='numBtn' data-value='0'>0</button>
+		<button id="" class='opBtn' data-value='='>=</button>
+		<button id="plus" class='opBtn' data-value='+'>+</button>
+	</div>
+
+	<script>
+	let firstNumeber = 0
+	let secondNumber = 0
+	let operator = ''
+
+	const numBtn = document.querySelectorAll('.numBtn')
+	console.log(numBtn)
+	for (let i = 0;i < numBtn.length; i += 1){
+		numBtn[i].addEventListener('click',function(e){
+			let num = 0
+			switch (e.target.id) {
+				case 'one':
+					num = 1
+					break
+				case 'two':
+					num = 2
+					break
+				case 'three':
+					num = 3
+					break
+				case 'four':
+					num = 4
+					break
+				case 'five':
+					num = 5
+					break
+				case 'six':
+					num = 6
+					break
+				case 'seven':
+					num = 7
+					break
+				case 'eight':
+					num = 8
+					break
+				case 'nine':
+					num = 9
+					break
+				case 'zero':
+					num = 0
+					break
+			}
+			// 
+			//clickNumber(num)
+			document.querySelector('.monitor').innerText += num
+		})
+	}
+
+	function clickNumber(num){
+		appendResult(num)
+	}
+
+	function setResult(num){
+		document.querySelector('.monitor').innerText = num
+	}
+
+	function appendResult(num){
+		document.querySelector('.monitor').innerText += num
+	}
+
+	const opBtn = document.querySelectorAll('.opBtn')
+	console.log(opBtn)
+	operatorBtn()
+	function operatorBtn(op){
+		for(let i = 0; i < opBtn.length; i += 1){
+			opBtn[i].addEventListener('click',(e)=>{
+				if(e.target.id ==='minus') {
+					handleOperator('-')
+				} else if (e.target.id === 'plus') {
+					handleOperator('+')
+				} else if (e.target.id === 'mutiply') {
+					handleOperator('*')
+				} else if (e.target.id === 'divide') {
+					handleOperator('/')
+				} else {
+					handleOperator('=')
+				}
+			})
+		}
+	}
+
+	function handleOperator(op){
+		if(op === '='){
+			//用計算機上的第二個數字抓過來
+			secondNumber = Number(getResult())
+			//開始計算
+			if (operator === '+') {
+				setResult(firstNumber + secondNumber)
+			} else if (operator === '-') {
+				setResult(firstNumber - secondNumber)
+			} else if (operator === '*') {
+				setResult(firstNumber * secondNumber)
+			} else if (operator === '/') {
+				setResult(firstNumber / secondNumber)
+			}
+		} else {
+			firstNumber = Number(getResult())
+			setResult('')
+			operator = op
+		}
+	}
+
+	function getResult(num){
+		return document.querySelector('.monitor').innerText
+	}
+	
+	</script>
+
+
+</body>
+</html>	
